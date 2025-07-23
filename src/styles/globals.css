@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  body {
+    @apply bg-dark text-white font-lexend font-normal text-base;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl xl:text-8xl font-semibold leading-tight lg:leading-[110px]
+  }
+
+  button {
+    @apply cursor-pointer transition-all duration-300
+  }
+
+  button:active {
+    @apply scale-[0.95]
+  }
+
+  .btn-primary-outline {
+    @apply py-2 px-10 border-2 border-white shadow-sm text-sm font-medium focus:outline-none text-white rounded-full
+  }
+
+  .btn-dark {
+    @apply bg-dark rounded-full text-white py-3 md:py-5 px-10 border-2 border-white shadow-sm text-sm font-medium focus:outline-none w-full
+  }
+
+  .hero {
+    @apply min-h-screen flex flex-col items-center justify-center bg-[url('/assets/hero-bg.png')] bg-cover bg-no-repeat pt-24 pb-20 relative z-10
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .container {
+    @apply px-4 sm:px-6 lg:px-8
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.083);
+  }
+
+  .planBanner {
+    @apply min-h-screen flex flex-col items-center justify-center bg-[url('/assets/plan-banner.png')] bg-cover bg-no-repeat pt-24 pb-20 relative z-10
+  }
+
+  .planBanner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.196);
+  }
+
+  .planCta {
+    @apply py-8 md:py-20 px-6 md:px-10 bg-[url('/assets/plan-cta.png')] bg-cover bg-no-repeat text-sm font-medium focus:outline-none text-white rounded-[24px] md:rounded-[48px]
+  }
+
+  .sectionContent h2 {
+    @apply text-3xl md:text-5xl font-bold xl:text-6xl
+  }
+
+  footer {
+    @apply relative z-10 overflow-x-hidden overflow-y-hidden;
+  }
+
+  footer::after {
+    content: "VERIFYCAR";
+    position: absolute;
+    left: -50px;
+    right: -50px;
+    bottom: -70px;
+    z-index: -1;
+    font-size: 320px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.02);
+    white-space: nowrap;
+    text-align: center;
+    pointer-events: none;
+    line-height: 0.8;
+  }
+
+  .form-control textarea,
+  .form-control input {
+    @apply w-full rounded-full px-4 md:px-5 py-3 md:py-4 text-[#5C5C5C] placeholder:text-[#5C5C5C] focus:outline-none border border-[#DDDDDD] text-sm md:text-base
+  }
+
+  .form-control textarea {
+    @apply rounded-3xl min-h-32 md:min-h-52
+  }
+
+  .ellipsis-210 {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    line-clamp: 8;
+    -webkit-box-orient: vertical;
+    height: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .payment-card {
+    @apply w-full flex items-center justify-center h-[112px] rounded-3xl px-5 py-4 border border-transparent cursor-pointer flex-col
+  }
+
+  .form-control-dark input {
+    @apply w-full rounded-full px-5 py-4 bg-transparent text-[#white] placeholder:text-[#5C5C5C] focus:outline-none border border-[#DDDDDD]
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer::after {
+    bottom: -10px;
+    font-size: 200px;
+  }
+
+  .ellipsis-210 {
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    height: 145px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer::after {
+    bottom: 10px;
+    font-size: 140px;
+    letter-spacing: -5px;
+  }
+
+  .ellipsis-210 {
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    height: 125px;
+  }
+}
